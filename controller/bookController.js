@@ -34,9 +34,7 @@ module.exports.createBook = async (req, res) => {
     await newBook.save();
     res.status(201).json(newBook);
   } catch (error) {
-    res
-      .status(500)
-      .json({ error: "An error occurred while creating the book." });
+    res.send(error);
   }
 };
 
